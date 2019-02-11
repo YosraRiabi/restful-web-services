@@ -1,4 +1,4 @@
-package com.riabi.rest.webservices.restfulwebservices;
+package com.riabi.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +21,8 @@ public class HelloWorldController {
     //hello-world-bean
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean() {
-        throw new RuntimeException("Some Error has happened!");
-        //return new HelloWorldBean ("Hello World -- changed");
+       // throw new RuntimeException("Some Error has happened!");
+        return new HelloWorldBean ("Hello World -- changed");
     }
     // /hello-world/path-variable/Yosra
     @GetMapping(path = "/hello-world/path-variable/{name}")

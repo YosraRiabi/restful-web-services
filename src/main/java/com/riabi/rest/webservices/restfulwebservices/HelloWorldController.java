@@ -4,8 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 //Controller
-//@RestController
-@Controller
+@CrossOrigin(origins="http://localhost:4200")
+@RestController
+// @Controller
 public class HelloWorldController {
 
     //GET
@@ -20,7 +21,8 @@ public class HelloWorldController {
     //hello-world-bean
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean() {
-        return new HelloWorldBean ("Hello World");
+        throw new RuntimeException("Some Error has happened!");
+        //return new HelloWorldBean ("Hello World -- changed");
     }
     // /hello-world/path-variable/Yosra
     @GetMapping(path = "/hello-world/path-variable/{name}")
